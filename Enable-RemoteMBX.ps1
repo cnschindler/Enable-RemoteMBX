@@ -26,7 +26,7 @@ function EnableRMBX
         Enable-RemoteMailbox @Params -ErrorAction Stop
         Write-Host -ForegroundColor Green -Object "Successfullly enabled a Remote Mailbox for User $($Identity)."
     }
-    
+
     catch
     {
         Write-Host -ForegroundColor Red -Object "Error enabling Remote Mailbox for User $($Identity). $($_)" 
@@ -35,9 +35,9 @@ function EnableRMBX
 
 Switch ($MailboxType)
 {
-    "Room" {$Params.Add("Room",$null)}
-    "Equipment" {$Params.Add("Equipment",$null)}
-    "Shared" {$Params.Add("Shared",$null)}
+    "Room" {$Params.Add("Room",$true)}
+    "Equipment" {$Params.Add("Equipment",$true)}
+    "Shared" {$Params.Add("Shared",$true)}
     Default {}
 }
 
