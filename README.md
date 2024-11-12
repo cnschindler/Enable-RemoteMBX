@@ -2,7 +2,7 @@
 
 Script to enable a remote mailbox for an existing AD user.
 
-Replace "@mytenant.mail.onmicrosoft.com" for variable $RemoteRoutingDomain.
+Replace "mytenant.mail.onmicrosoft.com" value for variable $RemoteRoutingDomain with your Remote Routing Domain.
 
 Use value of AD SamAccountName for the "-Identity" Parameter.
 
