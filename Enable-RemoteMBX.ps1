@@ -23,7 +23,7 @@ function EnableRMBX
 
     try
     {
-        Enable-RemoteMailbox $Params -ErrorAction Stop
+        Enable-RemoteMailbox @Params -ErrorAction Stop
         Write-Host -ForegroundColor Green -Object "Successfullly enabled a Remote Mailbox for User $($Identity)."
     }
     
