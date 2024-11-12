@@ -7,11 +7,11 @@ Param(
     $MailboxType
 )
 
-$RemoteRoutingDomain = "@mytenant.mail.onmicrosoft.com"
+$RemoteRoutingDomain = "mytenant.mail.onmicrosoft.com"
 
 [hashtable]$Params = @{
     Identity = $Identity
-    RemoteRoutingAddres = ($Identity + $RemoteRoutingDomain)
+    RemoteRoutingAddres = ($Identity + "@" + $RemoteRoutingDomain)
 }
 
 function EnableRMBX
