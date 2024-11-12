@@ -7,7 +7,7 @@ Param(
     $MailboxType
 )
 
-$RemoteRoutingDomain = "@ntxbocgat.mail.onmicrosoft.com"
+$RemoteRoutingDomain = "@mytenant.mail.onmicrosoft.com"
 
 [hashtable]$Params = @{
     Identity = $Identity
