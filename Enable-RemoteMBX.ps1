@@ -7,7 +7,14 @@ Param(
     $MailboxType
 )
 
-$RemoteRoutingDomain = "mytenant.mail.onmicrosoft.com"
+# Specify your remote rounting domain. E.g. mytenant.mail.microsoft.com
+$RemoteRoutingDomain = ""
+
+if ($RemoteRoutingDomain -notmatch ".")
+{
+    Write-Host -ForegroundColor DarkCyan -Object "`nVariable 'RemoteRoutingDomain' not set. Please assign a value and try again. Exiting...`n"
+    Exit
+}
 
 [hashtable]$Params = @{
     Identity = $Identity
