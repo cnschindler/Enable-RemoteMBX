@@ -8,9 +8,9 @@ Param(
 )
 
 # Specify your remote rounting domain. E.g. mytenant.mail.microsoft.com
-$RemoteRoutingDomain = ""
+[string]$RemoteRoutingDomain = ""
 
-if ($RemoteRoutingDomain -notmatch ".")
+if ([String]::IsNullOrWhiteSpace($RemoteRoutingDomain))
 {
     Write-Host -ForegroundColor DarkCyan -Object "`nVariable 'RemoteRoutingDomain' not set. Please assign a value and try again. Exiting...`n"
     Exit
