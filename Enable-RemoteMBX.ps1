@@ -2,9 +2,8 @@
 Param(
     [Parameter(Mandatory=$true)]
     $Identity,
-    [Parameter(Mandatory=$true)]
     [ValidateSet("Regular","Room","Equipment","Shared")]
-    $MailboxType
+    $MailboxType = "Regular"
 )
 
 # Specify your remote rounting domain. E.g. mytenant.mail.microsoft.com
@@ -18,7 +17,7 @@ if ([String]::IsNullOrWhiteSpace($RemoteRoutingDomain))
 
 [hashtable]$Params = @{
     Identity = $Identity
-    RemoteRoutingAddres = ($Identity + "@" + $RemoteRoutingDomain)
+    RemoteRoutingAddress = ($Identity + "@" + $RemoteRoutingDomain)
 }
 
 function EnableRMBX
@@ -36,7 +35,7 @@ function EnableRMBX
 
     catch
     {
-        Write-Host -ForegroundColor Red -Object "Error enabling Remote Mailbox for User $($Identity). $($_)" 
+        Write-Host -ForegroundColor Red -Object "Error enabling Remote Mailbox for User $($Identity). $($_)"
     }
 }
 
