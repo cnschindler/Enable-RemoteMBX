@@ -7,7 +7,7 @@ Param(
 )
 
 # Specify your remote rounting domain. E.g. mytenant.mail.microsoft.com
-[string]$RemoteRoutingDomain = ""
+[string]$RemoteRoutingDomain = "mytenant.mail.onmicrosoft.com"
 
 if ([String]::IsNullOrWhiteSpace($RemoteRoutingDomain))
 {
